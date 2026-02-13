@@ -1,0 +1,139 @@
+:root {
+  --bg: #0d0d0d;
+  --bg-card: #161616;
+  --text: #c8c8c8;
+  --text-muted: #6a6a6a;
+  --accent: #8a8aff;
+  --border: #222;
+  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+header {
+  margin-bottom: 4rem;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.entry {
+  border-left: 2px solid var(--border);
+  padding-left: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.entry:hover {
+  border-color: var(--accent);
+}
+
+.entry-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+}
+
+.entry h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.entry p {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.entry .tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: rgba(138, 138, 255, 0.08);
+  padding: 0.2em 0.6em;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  margin-right: 0.4rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+  opacity: 0.4;
+}
+
+footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  .container { padding: 2.5rem 1.25rem 4rem; }
+  header { margin-bottom: 3rem; }
+  .entries { gap: 2.5rem; }
+}
